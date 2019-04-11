@@ -1,0 +1,21 @@
+{% if section.style %}
+  {% assign style = section.style %}
+{% elsif page.style %}
+  {% assign style = page.style %}
+{% endif %}
+<section id="hero" class="jumbotron small">
+<div class="media-wrap">
+{% if style.tint_color %}
+  <div class="media-tint" style="background:{{ style.tint_color }};"></div>
+{% endif %}
+</div>
+  <div class="container">
+    <div class="row">
+  <div class="col-md-10 text-left">
+    <h1 class="text-left animated fadeInUp">Services</h1>
+    <p class="lead animated fadeInUp">Our team has big agency experience and small startup agility. Power your next project with the tools, talent, and tenacity of Bowtie.</p>
+    <br>
+  </div>
+</div>
+</div>
+</section>

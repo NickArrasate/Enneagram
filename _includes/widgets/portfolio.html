@@ -1,0 +1,26 @@
+<!-- Portfolio -->
+<link rel="stylesheet" type="text/css" href="/css/components/portfolio.css"/>
+
+<div class="row portfolios clearfix">
+{% assign portfolio = site.portfolios %}
+  {% for item in portfolio %}
+  {% capture parent_loop %}{{ forloop.index }}{% endcapture %}
+  {% capture thecycle %}{% cycle '1', '2', %}{% endcapture %}
+
+  {% if thecycle == '1' and forloop.first == false %}
+</div>
+<div class="row portfolios clearfix">
+  {% endif %}
+  <div class="col-sm-6 nopadding">
+    <a href="{{ item.url }}" class="portfolio-link" >
+      <div class="portfolio-cover-img animated fadeIn"><img src="{{ item.images[0] }}" alt="{{ item.title }}"/></div>
+    </a>
+    <!-- Portfolio Cover Caption -->
+    <div class="portfolio-caption">
+      <h3 class="title">{{ item.title }}</h3>
+      <h4 class="sub-title">{{ item.subtitle }}</h4>
+      <p class="category">{{ item.category }}</p>
+    </div>
+  </div>
+{% endfor %}
+</div>

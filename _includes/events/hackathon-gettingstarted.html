@@ -1,0 +1,26 @@
+<section class="generic section" >
+  <div class="container text-center">
+    <!--h1>Getting Started</h1-->
+    <h3 class="text-center area">⋈ BowTie is supporting {{ event.city }} with <a href="{{event.partner-url}}" target="blank" ''>{{event.partner}}</a>. Here's what you need to know:</h3>
+
+<ul class="eventintro">
+  <li>We're giving {{event.name}} participants {{event.specialoffer}}! <strong><a href="/owners/sign_up" ;>Sign Up</strong></a> using the code <strong>'{{event.redemptioncode}}'</strong> to get it.<br /></li>
+  <li>Select {{event.template}} when you build a project.</li>
+  {% if event.domainoffer %}
+  <li>{{event.domainoffer}}</li>
+  {% endif %}
+  {%if event.bowtieprize %}
+  <li>BowTie is giving the winner {{event.bowtieprize}}!</li>
+  {% endif %}
+</ul>
+
+    <br />
+
+    {% unless event.do-not-require-email %}
+    {% include events/hackathon-emailform.html %}
+    {% endunless %}
+
+<h4>New to BowTie? Check out the step-by-step <a href="/support/">User Guides</a>.</h4>
+
+    </div>
+</section>

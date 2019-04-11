@@ -1,0 +1,37 @@
+---
+layout: landing
+title: Platform
+permalink: /features/
+exclude_from_nav: false
+noindex: false
+masthead:
+  img_path:
+  pat_path: null
+social:
+  title: 'BowTie Static Site CMS and Custom Website Development Platform'
+  description: 'We deliver world class static web applications and sites. Work with us on your next Public Sector, Healthcare, MVP, or single page app project.'
+  img_path: '/img/bowtie-software-development-denver.jpg'
+social:
+  title: 'BowTie Static Site Building Platform'
+  description: 'Deliver world class static web applications and sites. Leverage BowTie your next Single Page App, or MVP project.'
+  img_path: '/img/bowtie-software-development-denver.jpg'
+
+---
+
+{% include nav-bootstrap.html %}
+{% include sections/features-hero.html %}
+{% include sections/features.html %}
+{% include sections/features-callouts2.html %}
+{% include sections/features-table.html %}
+<section class="dark">
+  <div class="text-center">
+    <h4 class="text-center">Sign up for periodic news, tips, and development updates.</h4>
+    {% include mailchimp-subscriber-form.html %}
+  </div>
+</section>
+<script>
+  function load() {
+    analytics.page('features');
+  }
+  window.onload = load;
+</script>

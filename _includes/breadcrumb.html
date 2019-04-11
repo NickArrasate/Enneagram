@@ -1,0 +1,37 @@
+ <ol class="breadcrumb">
+    <li>Main</li>
+    {% assign crumbs = page.url | split: '/' %}
+    {% assign crumbs_total = crumbs | size | minus: 1 %}
+    {% for crumb in crumbs offset: 1 %}
+      {% if forloop.index == crumbs_total %}
+          <li class="active"><a href="{{ site.baseurl }}{{ page.url }}">{{page.title}}</a></li>
+      {% else %}
+        {% assign crumb_limit = forloop.index | plus: 1 %}
+        {% capture crumb_url %}{% for c in crumbs limit: crumb_limit %}{{ c | append: '/' }}{% endfor %}{% endcapture %}
+        {% capture crumb_with_index %}{{ crumb_url | append: 'index.html' }}{% endcapture %}
+        {% capture current_page %}{{ site.baseurl }}{{ page.url }}{% endcapture %}
+
+        <!-- add category name to path -->
+        {% assign tags_list = page.categories %}
+          {% if tags_list.first[0] == null %}
+            {% for tag in tags_list %}
+              <li><a href="/categories/{{ tag }}/">{{ tag | capitalize }} <span>{{ page.tags[tag].size }}</span></a></li>
+            {% endfor %}
+          {% else %}
+            {% for tag in tags_list %}
+              <li><a href="/categories/{{ tag[0] }}/">{{ tag[0] | capitalize }} <span>{{ tag[1].size }}</span></a></li>
+            {% endfor %}
+          {% endif %}
+        {% assign tags_list = nil %}
+
+
+        {% for p in site.pages %}
+          {% if crumb_with_index != current_page and crumb_with_index == p.url %}
+              <li><a href="{{ crumb_with_index }}">{{ crumb | replace:'-',' ' | capitalize}}</a>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+</ol>
+<br/>
+{% include google-custom-search.html %}

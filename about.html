@@ -1,0 +1,34 @@
+---
+layout: landing
+title: About Us
+permalink: /about/
+exclude_from_nav: true
+noindex: false
+masthead:
+  img_path: '/img/backgrounds/codecamp2.jpg'
+  pat_path: # /img/backgrounds/gridbg.png
+  overlay: true
+seo:
+  title: 'About Bowtie'
+  description: 'We deliver world class web applications and ecommerce sites. Contact us to execute your next Public Sector, Healthcare, or software MVP.'
+  canonical:
+  noindex: false
+social:
+  title: 'Bowtie Custom Software Development'
+  description: 'We deliver world class static web applications and sites. Work with us on your next Public Sector, Healthcare, or software MVP project.'
+  img_path: '/img/bowtie-software-development-denver.jpg'
+
+---
+{% include nav-beta.html %}
+
+<section  id="" class="bgclear masthead cutangle {% if page.masthead.overlay %}overlay{% endif %}">
+  <div class='masthead-inner container row-90 text-center'>
+    <h1>We Make Stuff We're Proud Of</h1>
+  </div>
+</section>
+
+
+{% include sections/company.html %}
+{% include sections/team.html %}
+{% include sections/lets-work-together.html %}
+{% include sections/social-proof.html %}

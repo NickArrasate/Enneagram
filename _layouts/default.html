@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+
+  <body class="blog">
+    {% include gtm.html %}
+      {% include header.html %}
+      <div id="content">
+        {{ content }}
+      </div>
+      {% include footer.html %}
+    {% include ga.html %}
+  </body>
+
+</html>

@@ -1,0 +1,35 @@
+---
+# this front matter renders the file as css
+sitemap:
+  exclude: true
+---
+
+p.google-search{
+height: 30px;
+margin-top: 15px;
+}
+
+#___gcse_0 {
+  width: 60%;
+  float: left;
+  margin: -20px 30px -40px 0px;
+  max-width: 450px;
+  .cse .gsc-control-cse, .gsc-control-cse {padding:0;background:none;border:none;}
+  table td, table th {border: none;padding: 6px 8px;}
+  table tr {background:none;border:none;}
+  .cse table.gsc-search-box td.gsc-input, table.gsc-search-box td.gsc-input {padding-right:6px;}
+  .cse input.gsc-input, input.gsc-input {padding:2px 6px;}
+  div.gsc-clear-button {padding-left:5px;}
+  .cse input.gsc-search-button, input.gsc-search-button {background-color: #176e9e;border: 1px solid #176e9e;padding: 0 10px;}
+  }
+
+
+@media (max-width: 480px) {
+  #___gcse_0 {
+    width: 100%;
+    td.gsc-input {width:200px;}
+    td.gsc-clear-button {float:left;width: 35px;margin: 0px;}
+    td.gsc-search-button {float:left;padding:7px 8px;width:75px;}
+    .gsc-results-wrapper-overlay, .gsc-results-wrapper-visible {width: 90%; left: 5%;}
+  }
+}

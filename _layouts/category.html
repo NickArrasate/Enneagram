@@ -1,0 +1,63 @@
+---
+exclude_from_nav: true
+---
+
+
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+
+{% if page.masthead.img_path %}
+<style type="text/css">
+   .masthead {
+     background:url("{{ page.masthead.img_path }}") no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    bottom: 0;
+    left: 0;
+    position: relative;
+    right: 0;
+    top: 0;
+    }
+</style>
+{% endif %}
+
+{% if page.masthead.pat_path %}
+<style type="text/css">
+   .masthead {
+    background:url("{{ page.masthead.pat_path }}") repeat;
+    position: relative;
+    }
+</style>
+{% endif %}
+
+  <body>
+    {% include gtm.html %}
+    <div class="blog">
+      {% include header.html %}
+      <div id="content">
+        <section class="dark masthead">
+          <header class="container">
+            <div class="col-sm-12 col-lg-12">
+              <h1 class="page-heading" style="text-align:center; font-weight:400 !important;">{{ page.title }}</h1>
+              <h3 class="post-subtitle" style="text-align:center; font-weight:300 !important;">{{ page.subtitle }}</h3>
+            </div>
+          </header>
+        </section>
+        {% include breadcrumb.html %}
+        <section>
+          <div class="container">
+            {{ content }}
+          </div>
+        </section>
+      </div>
+      {% include footer.html %}
+    </div>
+    {% include ga.html %}
+
+  </body>
+
+</html>

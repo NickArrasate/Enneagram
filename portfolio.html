@@ -1,0 +1,40 @@
+---
+layout: landing
+title: Bowtie.co
+permalink: /portfolio/
+exclude_from_nav: true
+noindex: false
+masthead:
+  img_path: '/img/backgrounds/do-things-header.png'
+  pat_path: #
+  overlay: true
+seo:
+  title: 'Bowtie Portfolio'
+  description: 'We deliver world class web applications and ecommerce sites. Contact us to execute your next Public Sector, Healthcare, or software MVP.'
+  canonical:
+  noindex: false
+social:
+  title: 'Bowtie Portfolio'
+  description: 'We deliver elegant and efficient web applications and sites. Work with us on your next Public Sector, Healthcare, MVP, or single page app project.'
+  img_path: '/img/bowtie-software-development-denver.jpg'
+
+---
+
+{% include nav-beta.html %}
+<section class="bgclear masthead cutangle {% if page.masthead.overlay %}overlay{% endif %}">
+  <div class='masthead-inner text-center'>
+    <h1 class="text-center">Recent Projects</h1>
+  </div>
+</section>
+<section id="" class="team nopadtop">
+  <div class="container row-80 text-center">
+    <img src="/img/tie-black500.png" class="team-logo" />
+    <h1>Software. Perfected.</h1>
+    <div class="row">
+      <h3 class="text-center">We build elegant websites, web applications, and mobile apps.</h3>
+    </div>
+  </div>
+</section>
+{% include sections/portfolio.html %}
+{% include sections/service-testimonials.html %}
+{% include sections/contactus.html %}

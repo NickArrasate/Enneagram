@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+
+  {% if page.masthead.img_path %}
+  <style type="text/css">
+     .masthead {
+       background:url("{{ page.masthead.img_path }}") no-repeat;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      background-position: center center;
+      bottom: 0;
+      left: 0;
+      position: relative;
+      right: 0;
+      top: 0;
+      }
+  </style>
+  {% endif %}
+
+  {% if page.masthead.pat_path %}
+  <style type="text/css">
+     .masthead {
+      background:url("{{ page.masthead.pat_path }}") repeat;
+      position: relative;
+      }
+  </style>
+  {% endif %}
+
+  <body class="portfolio">
+    {% include gtm.html %}
+      {% include header.html %}
+      <div id="content">
+        {% include portfolio-header.html %}
+        {% include sections/portfolio-intro.html %}
+        {% include sections/portfolio-collage.html %}
+        {% include sections/portfolio-process.html %}
+        {% include sections/portfolio-testimonial.html %}
+        <section id="work-together" class="work-together">
+          <div class="container row-60 text-center">
+            <h2 class="text-center">Let's Work Together</h2>
+            <div class="row" style="margin-top:2em;">
+              <p>Bowtie builds world class web applications, e-commerce sites, and web products. We work with a limited number of clients per year to provide unparalelled attention and satisfaction. If you want to experience software development as it should be, contact us.</p>
+              <div class="button-group animated fadeInUp">
+                <a class="btn btn-default btn-lg" href="/contact/">Get in Touch</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      {% include footer.html %}
+    {% include ga.html %}
+
+  </body>
+
+</html>

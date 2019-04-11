@@ -1,0 +1,25 @@
+<!-- Hero classes are 'no-image' 'image-tagline' 'image-center' 'image-left' 'image-right' -->
+{% if event.bannerimg %}
+<section id="hero" class="jumbotron section image-center {{ event.bannerstyle }} {{ event.hero-color }}" style="background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url({{ event.bannerimg }}) !important;">
+{% elsif page.bannerimg %}
+<section id="hero" class="jumbotron section image-center {{ event.bannerstyle }} {{ event.hero-color }}" style="background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), background-image:url({{ page.bannerimg }}) !important;">
+{% else %}
+<section id="hero" class="jumbotron section no-image dark">
+{% endif %}
+
+  <div class="container">
+    <div class="logo-display">
+      <img class="logo container img hidden-xs" alt="Logo" src="{{ event.logo }}"></img>
+      <img class="logo container img-responsive visible-xs img" alt="Logo" src="{{ event.logo }}"></img>
+      <h1 class="page-title">Hello {{ event.name }}!</h1>
+    </div>
+      {% if event.intro %}
+      <h2>Hello {{ event.city }}! {{ event.intro }}</h2>
+      {% endif %}
+
+    <br />
+      {% if event.eventregistration %}
+      {% include events/hackathon-registrationbtn.html %}
+      {% endif %}
+  </div>
+</section>

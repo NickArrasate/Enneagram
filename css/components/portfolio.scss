@@ -1,0 +1,289 @@
+---
+# this front matter renders the file as css
+sitemap:
+  exclude: true
+---
+
+
+/*******************************************************/
+/*** portfolio carousel ***/
+/*******************************************************/
+#portfolio {
+	.carousel > .carousel-inner, .carousel > .carousel-inner.active {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		.item.active {
+			display: flex;
+		}
+		.item {
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+	}
+}
+/*******************************************************/
+/*** portfolios ***/
+/*******************************************************/
+
+.portfolios {
+	margin: 30px 0 0 0;
+	[class*="col"] {
+		min-height:240px;
+	}
+
+	[class*="col"] .inner.outline {
+		border:1px solid #DDDDDD;
+	}
+
+	h3 {
+		font-size:24px;
+		color:#426977;
+	}
+
+	p {
+		margin:15px 0 0 0;
+		text-align:center;
+	}
+	.sub-title, h4.sub-title {
+		margin: 10px auto !important;
+	}
+	h4.category, p.category {
+		font-size: 1.25em;
+		text-transform: none;
+		font-weight: 400 !important;
+		margin-bottom: 25px !important;
+		margin-top: 0;
+		font-style: italic;
+		color: #1D326B;
+	}
+	i {
+		width: 400px;
+		font-size:80px;
+		line-height:1;
+		color:#34495E;
+		display: block;
+		margin: 10px auto !important;
+		float: none;
+		text-align: center;
+	}
+	.portfolio-cover-img {
+		object-fit: cover;
+		max-width: 95%;
+		font-size:80px;
+		line-height:1;
+		color:#34495E;
+		display: block;
+		margin: 10px auto !important;
+		float: none;
+		text-align: center;
+		img {
+			max-height: 95%;
+			border: 1px solid rgba(0,0,0,.05);
+			box-shadow: 2px 1px 4px rgba(0,0,0,.10);
+		}
+		img[alt] {
+			color: transparent;
+		}
+	}
+}
+
+section .portfolios [class*="col"] .inner {
+	background-color:#fff;
+}
+
+section.alt .portfolios [class*="col"] .inner {
+	background-color:#transparent;
+}
+
+section.dark .portfolios [class*="col"] .inner {
+	background-color:#000;
+}
+
+.portfolios .sub-title {
+	color: #999999;
+}
+
+
+.nopadding { //used to remove padding from bootstraps .col-*-*
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.portfolio-link {
+	display: block;
+	.portfolio-hover {
+		transition: all ease .5s;
+		background: rgba(83, 156, 203, 0.8);
+		opacity: 0;
+		position: absolute;
+		width: 97%;
+		height: calc(100% - 108px);
+		margin-left: 5px;
+		outline: none;
+		&:hover {
+			opacity: 1;
+			outline: none;
+		}
+		&:active {
+			background: rgba(83, 156, 203, 0.8);
+			outline: none;
+		}
+
+		.portfolio-hover-content i {
+			color: #fff;
+			position: absolute;
+			margin: 0 0 15px 0;
+			top: 45%;
+			left: 50%;
+			margin-right: -50%;
+			transform: translate(-50%, -50%)
+
+		}
+	}
+}
+
+
+.portfolio-caption {
+	height: 60px;
+	margin-bottom: 30px;
+	h3 {
+		margin-bottom: 0px !important;
+	}
+}
+
+.project-description {
+	padding: 30px 60px 30px 15px;
+	p { text-align: left !important;}
+}
+
+
+/*******************************************************/
+/*** portfolios modal***/
+/*******************************************************/
+
+
+.portfolio-modal {
+	z-index: 1045;
+	.close {
+		position: fixed;
+		right: 2%;
+		font-size: 4em;
+		transition: all .2s ease-in-out;
+		font-weight: normal;
+		line-height: .6em;
+		&:hover {
+			color: red;
+			transform: scale(1.1);
+		}
+	}
+	.modal-body .title {
+		margin-top: 30px;
+	}
+	.modal-fullscreen {
+		background: #fff;
+	}
+	.modal-content {
+		background: transparent;
+		border: 0;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		padding: 0;
+	}
+}
+
+//classes added open opening a modal
+.modal-backdrop.modal-backdrop-fullscreen {
+	background: #ffffff;
+}
+.modal-backdrop.modal-backdrop-fullscreen.in {
+	opacity: .97;
+	filter: alpha(opacity=97);
+}
+
+
+@media screen and (min-width: 768px) {
+
+	.portfolio-modal.modal-size.modal-dialog  {
+		width: 90%;
+		height: 100%;
+
+	}
+
+}
+
+
+/*******************************************************/
+/*** Photo Gallery Carousel ***/
+/*******************************************************/
+
+/* Indicators list style */
+#portfoliocarousel, .portfolio-modal {
+	.portfolio-slide .carousel-indicators {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		min-height: 60px !important;
+		position: relative;
+		bottom: -5px;
+
+	}
+	.portfolio-slide .carousel-indicators li {
+		object-fit: cover;
+		max-height: 200px;
+		max-width: 300px;
+		border-radius: 0;
+		float: left;
+		height: auto;
+		margin-bottom: 5px;
+		margin-left: 0;
+		margin-right: 2px !important;
+		margin-top: 0;
+		width: calc(25% - 2px);
+	}
+	.portfolio-slide .carousel-indicators img {
+		border: 2px solid #FFFFFF;
+		float: left;
+		left: 0;
+	}
+	.portfolio-slide .carousel-indicators .active img {
+		border: 2px solid #333;
+		opacity: 0.6;
+	}
+	.active > img { //this centers the active image
+		margin-left: auto  !important;
+		margin-right: auto  !important;
+		max-height: 450px;
+	}
+}
+
+@media (max-width:767px) {
+.portfolio-link {
+	display: block;
+	.portfolio-hover {
+		width: 97%;
+		height: calc(100% - 68px);
+		margin-left: 8px;
+		}
+	}
+}
+
+@media (max-width:600px) {
+	.portfolio-caption {
+    height: unset;
+    margin-bottom: 15px;
+	}
+	.row.portfolios {
+		margin: 0 0 0 0;
+		[class*="col"] {
+			min-height: 360px;
+		}
+	}
+	.portfolio-hover {
+		height: calc(100% - 100px) !important;
+		}
+}

@@ -1,0 +1,39 @@
+<ul class="row post-list text-left">
+  {% assign featuredPosts =  site.categories['news']  | where:"featured",true %}
+  {% for post in featuredPosts limit:3 %}
+      {% if post.author %}
+        {% assign author = site.authors | where:"name", post.author | first %}
+      {% endif %}
+        <li class="col-sm-4 featured-post">
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+            <div class="featured-post-img animateEntry" {% if post.masthead.img_path %}style="background: url({{post.masthead.img_path}}) center no-repeat;background-size: cover;"{% endif %} >
+            </div>
+          </a>
+          <div class="animateEntry">
+            <h4>
+              <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            </h4>
+            <div class="post-metadata">
+              {% if post.categories.size > 0 %}
+                <span class="category-list">
+                  <ul class="tag-box">
+                  {% assign tags_list = post.tags %}
+                      {% for tag in tags_list %}
+                        <li class="label label-info">{{ tag | capitalize }}</li>
+                      {% endfor %}
+                      {% assign tags_list = nil %}
+                  </ul>
+                </span>
+              {% endif %}
+              <p>{{ post.date | date: "%b %-d, %Y" }}</p>
+            </div>
+            {{ post.excerpt }}
+            <p><a href="{{ post.url | prepend: site.baseurl }}">Read More ></a></p>
+          </div>
+      </li>
+    {% endfor %}
+</ul>
+<hr>
+<h5><a href="/resources/">Read our Blog</a></h5>
+<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a>
+</p>

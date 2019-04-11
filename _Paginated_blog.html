@@ -1,0 +1,53 @@
+---
+layout: blogindex-bt
+permalink: /blog/
+exclude_from_nav: true
+title:  Get Sh#t Done
+subtitle:  Seriously. We'll Help. This is our blog.
+masthead:
+  img_path:
+  pat_path: /img/backgrounds/argyle.png
+date:   2015-01-01 12:00:01
+author: chad
+comments:
+share:
+seo:
+  img_path: '/img/bowtie-software-development-denver.jpg'
+published: false
+---
+
+<ul class="post-list">
+{% for post in site.categories['news'] %}
+{% if post.featured != false %}
+  {% if post.author %}
+    {% assign author = site.bowtietheme.authors[post.author] %}
+  {% endif %}
+
+      <li class="post-summary">
+      {% if post.author %}<img class="img img-circle post-avatar pull-left" src="{% if page.element.card.avatar %}{{ page.element.card.avatar }}{% else %}https://www.gravatar.com/avatar/{{ page.element.card.gravatar }}?s=64{% endif %}">{% endif %}
+      <h2><a class="post-link post-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+      <h3 class="with-img"><a class="post-link post-subtitle" href="{{ post.url | prepend: site.baseurl }}">{{ post.subtitle }}</a></h3>
+      <span class="post-body-short">{{ post.excerpt }}</span>
+      <div class="post-metadata">
+        {% if post.author %}
+        by <a href="//twitter.com/{{ author.twitter }}" target="_blank" rel="noopener nofollow">{{ author.display_name }}</a>
+        {% endif %}
+        {{ post.date | date: "%b %-d, %Y" }}
+        {% if post.categories.size > 0 %}
+          <span class="category-list">&nbsp;|&nbsp; Topics:
+            <ul class="tag-box">
+            {% assign tags_list = post.categories %}
+                {% for tag in tags_list %}
+                  <li class="label label-info">{{ tag | capitalize }}</li>
+                {% endfor %}
+                {% assign tags_list = nil %}
+            </ul>
+          </span>
+        {% endif %}
+      </div>
+    </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>

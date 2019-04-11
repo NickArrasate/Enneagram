@@ -1,0 +1,10 @@
+<section id="portfolio-intro" class="bgclear cutangle masthead {% if page.masthead.overlay %}overlay{% endif %}">
+  <a name="team"></a>
+  <div class="container row-90 text-center">
+    {% if page.client_logo_img_path %}
+    <img class="client-logo" src="{{ page.client_logo_img_path }}" alt="{{page.title}}"/>
+    {% else %}
+    <h1 class="text-center">{{ page.title }}</h1>
+    {% endif %}
+  </div>
+</section>

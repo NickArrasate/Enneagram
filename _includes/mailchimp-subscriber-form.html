@@ -1,0 +1,24 @@
+<script type="text/javascript" src="/js/mailchimp.js"></script>
+
+  <!-- Begin MailChimp Signup Form -->
+  <div id="mc_embed_signup" class="signup-form">
+
+    <form action="https://{{site.mailchimp_username}}.{{site.mailchimp_server}}.list-manage.com/subscribe/post-json?u={{site.mailchimp_apikey}}&id={{site.mailchimp_listid}}&c=?"
+    method="post"
+    id="mc-embedded-subscribe-form"
+    name="mc-embedded-subscribe-form"
+    class="prospect-registration form-bloat form-stretch validate smaller row-90"
+    target="_blank" rel="noopener nofollow"
+    novalidate>
+    <div class="input-append">
+      <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+      <div style="position: absolute; left: -5000px;">
+        <input type="text" name="{{site.mailchimp_apikey}}_{{site.mailchimp_listid}}" value="">
+      </div>
+      <button value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-default" type="submit">Sign Up</button>
+    </div>
+    <p class="help-block text-muted">We won't spam or sell your email.</p>
+    </form>
+
+    <div id="notification_container"></div>
+  </div><!--@end mc_embed_signup-->

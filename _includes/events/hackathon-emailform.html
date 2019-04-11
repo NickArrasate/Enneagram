@@ -1,0 +1,18 @@
+<div style="z-index:50;position:relative;margin:30px auto;">
+  <div class="container signup-form">
+    <h4><em>Please verify the email address you registered with {{event.partner}}.</em></h4>
+    <form class="form-bloat form-stretch" action="https://seedworthy.createsend.com/t/d/s/{{event.mailinglistid}}/" method="post">
+      <div class="prospect-registration-pending">
+        <div class="input-append">
+          <input id="fieldEmail" name="cm-{{event.mailinglistid}}-{{event.mailinglistid}}" type="text" placeholder="Validate Your Email">
+          <button class="btn btn-default" type="submit">Submit</button>
+        </div>
+        <span class="help-block text-muted">We won't spam or sell your email.</span>
+      </div>
+      <!--div class="prospect-registration-successful" style="display:none;">
+        <h1>Thanks for Signing Up!</h1>
+        <h3>Keep an eye on your Email. We'll be in touch.</h3>
+      </div-->
+    </form>
+  </div>
+</div>

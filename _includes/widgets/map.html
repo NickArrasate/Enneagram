@@ -1,0 +1,13 @@
+<script type="text/javascript" src="/js/map.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/components/map.css"/>
+
+{% if site.bowtietheme.contact.latlng %}
+<div id="map" data-coords="{{site.bowtietheme.contact.latlng}}">
+  <a href="#map"></a>
+  <div class="company-location">
+    <h4>Hello {{site.bowtietheme.contact.company}}</h4>
+    <p>{{ site.bowtietheme.contact.city }}, {{ site.bowtietheme.contact.state }} {{ site.bowtietheme.contact.country }}</p>
+  </div>
+  <div id="map-canvas"></div>
+</div>
+{% endif %}

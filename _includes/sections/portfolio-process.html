@@ -1,0 +1,52 @@
+{% if page.challenge_copy %}
+<section id="portfolio-challenge">
+  <div class="container row-70 text-center">
+    <h2 class="text-center">The Challenge</h2>
+    <p>{{page.challenge_copy}}</p>
+  </div>
+</section>
+{% endif %}
+
+{% if page.result_copy %}
+<section id="portfolio-process" class="alt">
+  <div class="container row-70 text-center">
+    <div class="row" style="display: flex; align-items: center;">
+      <div class="col-xs-3 col-sm-3">
+        <img src="/img/bowtie-process.png" alt="bowtie development process" style="max-height:400px;"/>
+      </div>
+      <div class="col-xs-9 col-sm-9">
+        <h2 class="text-center">The Process</h2>
+        <p>{{page.content}}</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="portfolio-result">
+  <div class="container row-70 text-center">
+    <h2 class="text-center">The Result</h2>
+    <p>{{page.result_copy}}</p>
+    {% include widgets/portfoliocarousel.html %}
+    {% if page.project_website %}
+    <div class="button-group animated fadeInUp">
+      <a class="btn btn-default" href="{{page.project_website}}" target="_blank" rel="noopener nofollow">View Project Website</a>&nbsp;&nbsp;
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% else %}
+{% capture parent_loop %}{{ forloop.index }}{% endcapture %}
+<section id="portfolio-process" class="">
+  <div class="container row-70 text-center">
+    <h2 class="text-center">The Result</h2>
+    <p>{{page.content}}</p>
+    {% include widgets/portfoliocarousel.html %}
+    {% if page.project_website %}
+    <div class="button-group animated fadeInUp">
+      <a class="btn btn-default" href="{{page.project_website}}" target="_blank" rel="noopener nofollow">View Project</a>&nbsp;&nbsp;
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endif %}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+
+  <body>
+    {% include gtm.html %}
+    <div class="blog">
+      {% include gtm.html %}
+      {% include header.html %}
+      <div id="content">
+        <section class="gradient section text-center cutangle">
+          <header class="container">
+            <div class="col-sm-12 col-lg-12">
+              <h1 class="page-heading" style="text-align:center;">{{ page.title }}</h1>
+              <h3 class="post-subtitle" style="text-align:center; font-weight:300 !important;">{{ page.subtitle }}</h3>
+            </div>
+          </header>
+        </section>
+        <section class="nopadtop">
+          <div class="container">
+            {{ content }}
+          </div>
+        </section>
+      </div>
+      {% include footer.html %}
+    </div>
+    {% include ga.html %}
+
+  </body>
+
+</html>

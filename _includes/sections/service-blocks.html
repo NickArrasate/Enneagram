@@ -1,0 +1,15 @@
+<section id="service-blocks">
+  <row class="row">
+    {% for item in site.serviceblocks | sort: 'order' %}
+    <div style="background-image: linear-gradient(to bottom, rgba(0,0,0,.85), rgba(0,0,0,.65)), url({{ item.bg_img_path }}) !important; background-size: cover;" class="col-sm-6 col-md-3 text-white outer">
+      <div class="inner">
+        <span class="count">{{item.order}}</span>
+        <a href="{{item.linkto}}" >
+          <h2>{{item.title}}</h2>
+          <p>{{item.description}}</p>
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+  </row>
+</section>

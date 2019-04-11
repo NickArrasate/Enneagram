@@ -1,0 +1,26 @@
+<section id="portfolio-intro" class="nopadtop">
+  <div class="container row row-80">
+    <!-- begin long content -->
+    <div class="col col-md-6 col-lg-5 text-left">
+      <h4>{{page.category}}</h4>
+      <h1 class="portfolio-title">{{ page.subtitle }}</h1>
+      <p class='text-left'>{{page.intro-copy}}</p>
+      {% if page.service_role %}
+      <hr>
+      <h4>Our Role:</h4>
+      <ul>
+        {% for item in page.service_role %}
+          <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+    <div class="col col-md-6 col-lg-7 lead-img" style="">
+      <div class="portfolio-cover-img animated fadeIn"><img src="{{ page.images[1] }}" alt="{{ page.title }}"/></div>
+    </div>
+    <br/>
+    <div class="col-sm-12 button-group text-center animated fadeInUp">
+      <a class="btn btn-default btn-lg" href="/contact/">Get a Quote</a>
+    </div>
+  </div>
+</section>

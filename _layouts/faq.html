@@ -1,0 +1,55 @@
+---
+layout: default
+---
+<section class="alt">
+  <div class="container">
+    {% if page.author %}
+      {% assign author = site.bowtietheme.authors[page.author] %}
+    {% endif %}
+
+    <h3><a href="/faq/">FAQ:</a></h3>
+    <h1>{{page.title}}</h1>
+
+     <div class="faq">
+      <article class="faq-content">
+        {{ content }}
+      </article>
+
+
+      {% if page.share %}
+        {% include addthis.html %}
+      {% endif %}
+
+      {% if page.comments %}
+         {% include disqus.html %}
+      {% endif %}
+
+    <br />
+    <hr>
+    {% include google-custom-search.html %}
+
+    <p>Looking for something else? Check out our <a href="/support/">User Guides</a>, <a href="/examples/">Examples</a>, and <a href="/docs/">Technical Docs</a>.</p>
+
+    &nbsp;
+
+    <ol class="breadcrumb">
+       <li>Main</li>
+       <li><a href="{{ site.baseurl }}/support/">Support</a></li>
+       <li><a href="{{ site.baseurl }}/faq/">FAQ</a></li>
+       {% assign crumbs = page.url | split: '/' %}
+       {% assign crumbs_total = crumbs | size | minus: 1 %}
+       {% for crumb in crumbs offset: 1 %}
+         {% if forloop.index == crumbs_total %}
+             <li class="active"><a href="{{ site.baseurl }}{{ page.url }}">{{page.title}}</a></li>
+         {% else %}
+           {% assign crumb_limit = forloop.index | plus: 1 %}
+           {% capture crumb_url %}{% for c in crumbs limit: crumb_limit %}{{ c | append: '/' }}{% endfor %}{% endcapture %}
+           {% capture crumb_with_index %}{{ crumb_url | append: 'index.html' }}{% endcapture %}
+           {% capture current_page %}{{ site.baseurl }}{{ page.url }}{% endcapture %}
+         {% endif %}
+       {% endfor %}
+    </ol>
+
+    </div>
+  </div>
+</section>

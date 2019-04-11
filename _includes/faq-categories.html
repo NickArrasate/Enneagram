@@ -1,0 +1,8 @@
+<h5 class="bold">FAQ Categories</h5>
+<ul class="tag-box">
+{% assign faqs_grouped = site.faq | group_by: 'category' | sort: 'name' %}
+  {% for group in faqs_grouped %}
+    <li class="label label-info"><a href="#{{ group.name }}">{{ group.name | capitalize }}</a></li>
+  {%endfor%}
+{% assign faqs_grouped = nil %}
+</ul>

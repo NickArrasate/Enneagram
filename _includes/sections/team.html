@@ -1,0 +1,99 @@
+<section id="team_section" class="">
+  <div class="container">
+    <div class="row row-80">
+      <div class="col-md-8 col-md-offset-2">
+        <h2>Our Team</h2>
+        <img src="/img/tie-black500.png" class="team-logo">
+        <p>Our team has big agency experience and small startup agility, creating high quality work at twice the speed of the “big guys.”</p>
+      </div>
+    </div>
+    {% for member in site.team %}
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="mobile-team-member">
+          <img src="{{member.avatar_path}}">
+          <h3>{{member.name}}</h3>
+          <p class="bio">{{member.bio_textarea}}
+            <br></br>
+            <strong>Fave food:</strong> {{member.fav-food}}
+            <br></br>
+            <strong>Fave Music:</strong> {{member.fav-music}}
+          </p>
+          <ul class="row social">
+            {% if member.social.linkedin %}
+            <li>
+              <a href="//linkedin.com/{{member.social.linkedin}}" target="_blank" rel="noopener nofollow"><i class="fa fa-linkedin"></i></a>
+            </li>
+            {% endif %}
+            {% if member.social.github %}
+            <li>
+              <a href="//github.com/{{member.social.github}}" target="_blank" rel="noopener nofollow"><i class="fa fa-github"></i></a>
+            </li>
+            {% endif %}
+            {% if member.social.twitter %}
+            <li>
+              <a href="//twitter.com/{{member.social.twitter}}" target="_blank" rel="noopener nofollow"><i class="fa fa-twitter"></i></a>
+            </li>
+            {% endif %}
+            {% if member.social.behance %}
+            <li>
+              <a href="//linkedin.com/{{member.social.behance}}" target="_blank" rel="noopener nofollow"><i class="fa fa-behance"></i>
+              </a>
+            </li>
+            {% endif %}
+            {% if member.social.email %}
+            <li>
+              <a mailto:="{{member.social.email}}" target="_blank" rel="noopener nofollow" class="email"><i class="fa fa-envelope-o"></i></a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  {% for member in site.team %}
+  <div class="member{{member.memberorder}}">
+    <img src="{{member.avatar_path}}">
+    <div class="content">
+      <h3>{{member.name}}</h3>
+      <p class="bio">{{member.bio_textarea}}
+        <br></br>
+        <strong>Fave food:</strong> {{member.fav-food}}
+        <br></br>
+        <strong>Fave Music:</strong> {{member.fav-music}}
+      </p>
+      <ul class="row social">
+        {% if member.social.linkedin %}
+        <li>
+          <a href="//linkedin.com/{{member.social.linkedin}}" target="_blank" rel="noopener nofollow"><i class="fa fa-linkedin"></i></a>
+        </li>
+        {% endif %}
+        {% if member.social.github %}
+        <li>
+          <a href="//github.com/{{member.social.github}}" target="_blank" rel="noopener nofollow"><i class="fa fa-github"></i></a>
+        </li>
+        {% endif %}
+        {% if member.social.twitter %}
+        <li>
+          <a href="//twitter.com/{{member.social.twitter}}" target="_blank" rel="noopener nofollow"><i class="fa fa-twitter"></i></a>
+        </li>
+        {% endif %}
+        {% if member.social.behance %}
+        <li>
+          <a href="//linkedin.com/{{member.social.behance}}" target="_blank" rel="noopener nofollow"><i class="fa fa-behance"></i>
+          </a>
+        </li>
+        {% endif %}
+        {% if member.social.email %}
+        <li>
+          <a mailto:="{{member.social.email}}" target="_blank" rel="noopener nofollow" class="email"><i class="fa fa-envelope-o"></i></a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+</section>

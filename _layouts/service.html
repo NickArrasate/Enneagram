@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+
+<body>
+  {% include gtm.html %}
+  <div class="blog">
+    {% include header.html %}
+    <div id="content">
+      <section class="masthead section gradient">
+        <h3 class="text-center"><a href="/backend-services/">Fixed Fee Services:</a></h3>
+        <h1 class="text-center">{{page.title}}</h1>
+      </section>
+      <section class="">
+        <div class="container">
+          <div class="row  row-90">
+            <div class="col-sm-7">
+              <h1>Behind, Burned, or Overwhelmed?
+              <br/><span style="color: #2980B2;">We Can Help...</span></h1>
+              <h3 style="text-transform: none;color:#000;">BowTie offers a number of fixed fee service packages to fix your issue and make stack more efficient.</h3>
+            </div>
+            <div class="col-sm-5">
+              {% if page.img_path %}<img class="image" src="{{page.img_path}}">{% endif %}
+            </div>
+          </div>
+          <br />
+          <hr />
+          <div class="services-item">
+            <h2 class="text-left title"><span style="color: #2980B2;">Solution: </span>{{ page.title }}</h2>
+            {% if page.subtitle %}
+            <h3 class="subtitle">{{ page.subtitle }}</h3>
+            {% endif %}
+
+            <div class="content">
+              {{ page.content }}
+            </div>
+
+            {% if page.turnaround %}
+            <p class="turnaround"><span style="color: #2980B2;">Turnaround: &nbsp;</span>{{ page.turnaround }}</p>
+            {% endif %}
+
+            {% if page.price %}
+            <p class="price"><span style="color: #2980B2;">Cost: &nbsp;</span>${{ page.price }} *</p>
+            {% endif %}
+
+            {% if page.bullets.bullet1_textarea %}
+            <p class="list-title"><span style="color: #2980B2;">What We Do: &nbsp;</span></p>
+            <ul style="text-align: left !important;">
+              <li>{{ page.bullets.bullet1_textarea }}</li>
+              {% if page.bullets.bullet2_textarea %}<li>{{ page.bullets.bullet2_textarea }}</li>{% endif %}
+              {% if page.bullets.bullet3_textarea %}<li>{{ page.bullets.bullet3_textarea }}</li>{% endif %}
+              {% if page.bullets.bullet4_textarea %}<li>{{ page.bullets.bullet4_textarea }}</li>{% endif %}
+              {% if page.bullets.bullet5_textarea %}<li>{{ page.bullets.bullet5_textarea }}</li>{% endif %}
+              {% if page.bullets.bullet6_textarea %}<li>{{ page.bullets.bullet6_textarea }}</li>{% endif %}
+            </ul>
+            {% endif %}
+
+          </div>
+
+        </div>
+      </section>
+      {% include sections/contactform.html %}
+    </div>
+    {% include footer.html %}
+  </div>
+  {% include ga.html %}
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+---
+layout: category
+permalink: /support/
+exclude_from_nav: true
+title:  Support
+subtitle:  Browse our User Guides and Get Help.
+masthead:
+  pat_path: /img/backgrounds/gridbg.png
+date:   2015-01-01 12:00:01
+author: chad
+comments:
+share:
+seo:
+  title: 'Bowtie Support Resources'
+  description: 'Deliver world class static web applications and sites. We can help.'
+  img_path: '/img/bowtie-software-development-denver.jpg'
+published: false
+---
+<div class="support row">
+<div class="col-sm-9">
+  <div class="support-block">
+    <h1>FAQ</h1>
+      <p>Explore short answers to common questions.</p>
+        <ul class="faq-list row">
+	{% assign faqs = site.faq | where:"featured",true | sort:"weight" %}
+
+        {% for faq in faqs limit:4 %}
+        <div class="panel-group" id="accordion">
+          <div class="col-md-12">
+            <div class="faq-panel panel panel-default">
+              <div class="panel-heading" data-parent="#accordion" data-toggle="collapse" href="#collapse_{{faq.id | jsonify | slugify}}" style="cursor:pointer;">
+                  <h5 class="panel-title">
+                      {{faq.title}}<i class="fa fa-chevron-down pull-right expander"></i>
+                  </h5>
+              </div>
+              <div id="collapse_{{faq.id | jsonify | slugify}}" class="collapse noCrossRef">
+                <div class="panel-body">
+                    {{faq.excerpt}}
+                    <br/>
+                    <a class="btn btn-primary btn-sm" href="{{ faq.url | prepend: site.baseurl }}">More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      {% endfor %}
+    </ul>
+  <h4><a href="/faq/" class="text-info">More FAQs <i class="fa fa-chevron-right text-info"></i></a></h4>
+  &nbsp;
+  </div>
+
+
+<div class="support-block">
+  <h1>User Guides</h1>
+  <ul class="post-list">
+    {% assign sortedPosts =  site.categories['help']  | where:"featured",true | sort:"weight" %}
+    {% for post in sortedPosts limit:6 %}
+      {% if post.author %}
+      {% assign author = site.bowtietheme.authors[post.author] %}
+      {% endif %}
+        <li class="post-summary">
+          <h2><a class="post-link post-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+          <h3><a class="post-link post-subtitle" href="{{ post.url | prepend: site.baseurl }}">{{ post.subtitle }}</a></h3>
+        </li>
+    {% endfor %}
+    </ul>
+    &nbsp;
+    <h4><a href="/user-guides/" class="text-info">View All User Guides <i class="fa fa-chevron-right text-info"></i></a></h4>
+    &nbsp;
+
+  </div>
+</div>
+  <div class="col-sm-3 support-sidebar">
+    {% include support-sidebar-email.html %}
+  </div>
+</div>
+<br />
+<hr>
+<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>

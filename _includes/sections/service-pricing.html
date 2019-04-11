@@ -1,0 +1,92 @@
+<section  id="pricing-services" class="nopadtop">
+  <a name="pricing-services"></a>
+  <div class="container row-90 text-center">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs row" role="tablist">
+      <li role="presentation" class="active"><a href="#dev" aria-controls="home" role="tab" data-toggle="tab">Development</a></li>
+      <li role="presentation"><a href="#backend" aria-controls="home" role="tab" data-toggle="tab">Fixed Fee Audits</a></li>
+      <li role="presentation" class=""><a href="#shopify" aria-controls="home" role="tab" data-toggle="tab">Shopify Theme Development</a></li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane fade in active" id="dev">
+        <div class='pricing row'>
+          {% assign services = site.dev-pricing %}
+            {% for service in services %}
+            {% if service.type == 'shopify' %}
+              {% continue %}
+            {% endif %}
+          <div class='col-lg-3 col-md-4 col-sm-6'>
+            <!--PLAN 2-->
+            <div class='plan panel panel-default'>
+              <div class="panel-heading plan-name">
+                {{ service.title }}
+              </div>
+              <div class='panel-body text-center'>
+                <div class='price'>
+                  <span class="starting">{% unless forloop.last %}Starting at &nbsp;{% endunless %}</span>
+                  <span class="dollar">{% unless forloop.last %}${% endunless %}</span>
+                  {{ service.price }}
+                </div>
+                <p class="text-muted">{{ service.content }}</p>
+                <ul class='plan-features list-group'>
+                  <hr>
+                  {% for bullet in service.bullets %}
+                  <li class='list-group-item line-spaced'>
+                    {{ bullet.copy_textarea }}
+                  </li>
+                  {% endfor %}
+                </ul>
+            </div>
+          </div>
+          </div>
+          {% endfor %}
+        </div>
+        <p class="btn-holder">
+          <a href="/contact/" class="btn btn-success btn-lg">Get Started</a>
+        </p>
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="backend">
+        <p>&nbsp;</p>
+        {% include services.html %}
+      </div>
+      <div role="tabpanel" class="tab-pane fade in" id="shopify">
+          <div class='pricing row'>
+              {% assign services = site.dev-pricing %}
+              {% for service in services %}
+              {% if service.type == 'development' %}
+                {% continue %}
+              {% endif %}
+            <div class='col-lg-3 col-md-4 col-sm-6'>
+              <!--PLAN 2-->
+              <div class='plan panel panel-default'>
+                <div class="panel-heading plan-name">
+                  {{ service.title }}
+                </div>
+                <div class='panel-body text-center'>
+                  <div class='price'>
+                    <span class="starting">{% unless forloop.last %}Starting at &nbsp;{% endunless %}</span>
+                    <span class="dollar">{% unless forloop.last %}${% endunless %}</span>
+                    {{ service.price }}
+                  </div>
+                  <p class="text-muted">{{ service.content }}</p>
+                  <ul class='plan-features list-group'>
+                    <hr>
+                    {% for bullet in service.bullets %}
+                    <li class='list-group-item line-spaced'>
+                      {{ bullet.copy_textarea }}
+                    </li>
+                    {% endfor %}
+                  </ul>
+              </div>
+            </div>
+            </div>
+            {% endfor %}
+          </div>
+          <p class="btn-holder">
+            <a href="/contact/" class="btn btn-success btn-lg">Get Started</a>
+          </p>
+        </div>
+    </div>
+  </div>
+</section>

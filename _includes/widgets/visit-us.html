@@ -1,0 +1,15 @@
+<div class="text-left">
+  <span>
+    <strong>Address</strong>
+    <br>
+    {{ site.bowtietheme.contact.address }}<br>
+    {{ site.bowtietheme.contact.city }} {{ site.bowtietheme.contact.state }} {{ site.bowtietheme.contact.zip }}<br>
+    {% if site.bowtietheme.contact.phone %} {{ site.bowtietheme.contact.phone }} {% endif %}
+  </span>
+  <p>&nbsp;</p><br/>
+  <span>
+    <strong>Email</strong>
+    <br>
+    <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+  </span>
+</div>

@@ -1,0 +1,54 @@
+{% if include.email %}{% assign formEmail = include.email %}{% else %}{% assign formEmail = site.email %}{% endif %}<a name="contact"></a>
+<form id="landing-form" class="email-form text-left" action="//formspree.io/{{ formEmail }}" method="POST">
+  <h2>{{page.action.heading}}</h2>
+  <p>{{page.action.subhead}}</p>
+
+  {% if page.action.form.name %}
+    <div class='form-group'>
+      <div class="input">
+        <label class="text">
+          Name
+        </label>
+        <input aria-required="true" class="string text form-control" id="twitter" maxlength="255" name="Name" placeholder="Jane Doe" size="255" type="text" required/>
+      </div>
+    </div>
+  {% endif %}
+  {% if page.action.form.email %}
+    <div class='form-group'>
+      <div class="input">
+        <label class="text">
+          Email
+        </label>
+        <input aria-required="true" class="string text form-control" maxlength="255" name="Email" id="user_email" placeholder="jane@example.com" size="255" type="text" required/>
+      </div>
+    </div>
+  {% endif %}
+  {% if page.action.form.message %}
+  <div class='form-group'>
+    <div class="field-box">
+      <label>Message</label>
+      <textarea class="form-control" id="profile_message" name="Message" rows="4" required></textarea>
+    </div>
+  </div>
+  {% endif %}
+  {% if page.action.form.optIn %}
+  <div class='form-group'>
+    <div class="checkbox">
+      <label class="text">
+        <input id="profile_optin" type="checkbox" name="profile[optIn]" checked > Join our mailing list
+      </label>
+    </div>
+  </div>
+  {% endif %}
+  <br>
+
+  <div class='form-actions text-center'>
+    <input id="Submit" class="button btn {% if page.action.form.btnType %}btn-{{page.action.form.btnType}} {% else %}btn-success{% endif %}" name="Submit" type="submit" value="{{page.action.form.btnText}}">
+  </div>
+
+  <div class='form-response text-center' style="display:none;">
+    {% if page.action.form.complete %}<p>{{page.action.form.complete}}</p>{% else %}<p>Your information has been saved.</p>{% endif %}
+  </div>
+  <br>
+  {% if page.action.subtext %}<p class="subtext">{{page.action.subtext}}</p>{% endif %}
+</form>

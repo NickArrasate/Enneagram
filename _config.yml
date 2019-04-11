@@ -1,0 +1,173 @@
+# Site settings
+title: "Expert Shopify and Web Application Development | ⋈ Bowtie"
+
+description: "Hire top talent for your next custom ecommerce or application development project."
+
+email: 'info@bowtie.co'
+
+baseurl:  # the subpath of your site, e.g. /blog/
+
+url: "https://bowtie.co" # the base hostname & protocol for the site
+
+logourl: /img/bt-logo.png # Site logo
+
+author: "⋈ Bowtie.co"
+author_thumbnail: "/img/chad.png" # Author avatar
+
+# Theme additions - please update the default values
+
+mailchimp_username: bowtie
+mailchimp_server: us5
+mailchimp_apikey: 85cc3923dcbe51832fa566843
+mailchimp_listid: d4c3230a3a
+
+google_analytics_id:  "UA-112855270-1" # Your google analytics ID (e.g. 'UA-XXXXXXXX-X')
+google_tag_manager:  "GTM-TK6JBBR" # Your google analytics ID (e.g. 'UA-XXXXXXXX-X')
+
+google_api_key: AIzaSyCKnqYIqiR1-K55ZCq6jC0JDY04qYlHwZI # Your Google API key for Maps
+
+
+bowtietheme:
+
+  # Contact info, leave blank to ignore
+  contact:
+    company: ⋈ Bowtie.co
+    address: 3575 Ringsby Court, STE 302
+    city: Denver
+    state: CO
+    zip: 80216
+    country: USA
+    phone: (720) 504-8091
+    latlng: 39.773771,-104.9827857,17z # (e.g. '39.733536,-104.992611')
+    twitter: bowtie_co # (e.g. 'bowtie_co')
+    facebook: bowtieagency # (e.g. 'bowtieagency')
+    github: bowtie-co # (e.g. 'bowtie-io')
+    instagram: bowtieagency # (e.g. 'bowtieagency')
+    flickr: #groups/2772799@N24/ # (e.g. 'groups/2772799@N24/')
+    linkedin: company/bowtie/ # (e.g. 'company/bowtie')
+    youtube: #channel/UCovWO5keLOLcLu8WdO-ABJw # (e.g. 'channel/UCovWO5keLOLcLu8WdO-ABJw')
+
+  # Author attribution data
+  authors:
+    chad:
+      display_name: Chad Person
+      avatar: /img/chad-bowtie.png
+      gravatar: 82f60d4376bab6a31f85211a9345303f
+      email: chad@bowtie.co
+      web: https://bowtie.co/
+      twitter: chadperson
+      medium: no-buffer
+      github: chadperson
+      bio: Founder and CEO - A designer with a passion for making software better, users happier, and for building a nicer looking world.
+
+    charlie:
+      display_name: Charlie McClung
+      avatar: /img/charlie-bowtie.png
+      gravatar:
+      email: charlie@bowtie.co
+      web: https://bowtie.co/
+      twitter: #
+      github: bowtie-co
+      bio: #
+
+    tim:
+      display_name: Tim Brandle
+      avatar: /img/tim-bowtie.png
+      gravatar:
+      email: tim@bowtie.co
+      web: https://bowtie.co/
+      twitter: #https://twitter.com/brandlerock
+      github: tbrandle
+      bio: #
+
+    stacie:
+      display_name: Stacie Velehradsky
+      avatar: /img/stacie-bowtie.png
+      gravatar:
+      email: stacie@bowtie.co
+      web: https://bowtie.co/
+      twitter: https://twitter.com/bowtie_co
+      github: bowtie-co
+      bio: #
+
+    staff:
+      display_name: Bowtie.co
+      avatar: /img/bowtie-staff.png
+      gravatar:
+      email: info@bowtie.co
+      web: https://bowtie.co/
+      twitter: https://twitter.com/bowtie_co
+      github: bowtie-co
+      bio: #
+
+collections:
+  #faq:
+    #output: true
+    #permalink: /faq/:path/
+  posts:
+    output: true
+    permalink: /:path/
+  portfolios:
+    output: true
+    permalink: /portfolio/:path/
+  services:
+    output: true
+    permalink: /:path/
+  serviceblocks:
+    output: false
+    permalink: /:path/
+  team:
+    output: false
+    permalink: /:path/
+  lander-1-col:
+    output: true
+  lander-2-col:
+    output: true
+  dev-pricing:
+    output: false
+  testimonials:
+    output: false
+
+defaults:
+  -
+    scope:
+      type: "services"
+    values:
+      layout: "service"
+  -
+    scope:
+      type: "portfolios"
+    values:
+      layout: "portfolio"
+  - scope:
+      collection: lander-1-col
+    values:
+      layout: "lander-simple-singlecol"
+
+# Permalinks
+permalink: /:categories/:title/
+relative_permalinks: false
+
+plugins_dir: #
+plugins:
+  [jekyll-redirect-from]
+
+# Pagination config
+#paginate: 5
+#paginate_path: "/blog/page:num/"
+
+#compress sass
+sass:
+  style: compressed
+
+keep_files: # Files/Folders located inside the ./_site folder to be retained on build (e.g.'[.git, .svn]')
+  - docs
+  - assets
+
+# Files/Folders to be excluded from generated _site folder
+exclude:
+  - .gitignore
+  - .sass-cache
+
+#toggle future post dates back on
+future: true

@@ -1,0 +1,8 @@
+<h5 class="bold">Categories</h5>
+<ul class="tag-box">
+{% assign guides_grouped = site.categories['help'] | group_by: 'type' | sort: 'name' %}
+  {% for group in guides_grouped %}
+    <li class="label label-info"><a href="#{{ group.name }}">{{ group.name | capitalize }}</a></li>
+  {%endfor%}
+{% assign guides_grouped = nil %}
+</ul>

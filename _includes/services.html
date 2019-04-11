@@ -1,0 +1,53 @@
+<div class="row pricing-header">
+  <div class="col-md-8 col-md-offset-2">
+    <h3>Team Augmentation and Backend Services</h3>
+    <p class="lead">When we engage a new client or hop into a team augmentation project we often need to evaluate an inherited code base, or shore up some immediate concerns. To take the guesswork out of the equation, we offer a handful of fixed fee services that cover our most common requests.</p>
+    <p>&nbsp;</p>
+  </div>
+</div>
+<div class="">
+    {% assign services = site.services | sort: 'title' %}
+    {% for item in services %}
+    {% unless item.exclude %}
+      <div class="services-item">
+        <div class="row">
+
+          <div class="col-md-5">
+            {% if item.img_path %}<a href="{{ site.baseurl }}{{ item.url }}"><img class="img" style="padding: 10px 10px 10px 0;" src="{{item.img_path}}"></a>{% endif %}
+          </div>
+          <div class="col-md-7">
+            <h3 class="text-left title"><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></h3>
+            {% if item.subtitle %}
+            <p class="subtitle">{{ item.subtitle }}</p>
+            {% endif %}
+
+            {% if item.turnaround %}<p class="details">{{ item.turnaround }}{% if item.price %}&nbsp;/&nbsp;<span class="">${{ item.price }}</span>{% endif %}</p>{% endif %}
+
+
+
+            {% if item.bullets.bullet1_textarea %}
+            <ul style="text-align: left !important;">
+              <li>{{ item.bullets.bullet1_textarea }}</li>
+              {% if item.bullets.bullet2_textarea %}<li>{{ item.bullets.bullet2_textarea }}</li>{% endif %}
+              {% if item.bullets.bullet3_textarea %}<li>{{ item.bullets.bullet3_textarea }}</li>{% endif %}
+              {% if item.bullets.bullet4_textarea %}<li>{{ item.bullets.bullet4_textarea }}</li>{% endif %}
+              {% if item.bullets.bullet5_textarea %}<li>{{ item.bullets.bullet5_textarea }}</li>{% endif %}
+              {% if item.bullets.bullet6_textarea %}<li>{{ item.bullets.bullet6_textarea }}</li>{% endif %}
+            </ul>
+            {% endif %}
+
+            <div class="content">
+              {{ item.content }}
+            </div>
+
+            <a class="btn btn-default" href="{{ site.baseurl }}{{ item.url }}">Learn More</a>
+
+          </div>
+
+      </div>
+      <hr />
+      </div>
+      {% endunless %}
+    {% endfor %}
+    {% assign services = null %}
+</div>
