@@ -5,21 +5,21 @@
 {% endif %}
 
 <!-- Hero classes are 'no-image' 'image-tagline' 'image-center' 'image-left' 'image-right' -->
-<section id="hero" class="jumbotron">
+<section id="hero" class="jumbotron" style="background-image: url('../img/steve-johnson-632871-unsplash.jpg'); background-size: cover; background-position: center center;">
   <div class="media-wrap">
   {% if style.tint_color %}
-    <div class="media-tint" style="background:{{ style.tint_color }};"></div>
+    <div class="media-tint" style="background: {{ style.tint_color }}"></div>
   {% endif %}
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-md-10 text-left">
-        <h1 class="text-left animated fadeInUp">Software. Perfected.</h1>
-        <p class="lead animated fadeInUp">This intro panel would have been amazing and clever but then we got too focused on our clients' work. We're good with that.</p>
+      <div class="col-md-12 text-center">
+        <h1 class="text-center animated fadeInUp text-white ">Welcome to Ennsights.</h1>
+        <p class="lead animated fadeInUp text-white">Practicing Enneagram for a better self.</p>
         <br>
-        <div class="button-group pull-left animated fadeInUp">
+        <!-- <div class="button-group pull-left animated fadeInUp">
           <a class="btn btn-transparent btn-lg" href="/services/">What We Do</a>&nbsp;&nbsp;
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

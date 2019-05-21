@@ -9,10 +9,14 @@
 /***************** clients Section *****************/
 
 
+
 .lander {
  .pitch {
    .logo.img { max-width: 250px;text-align: center;}
  }
+//  h1,h2,h3{
+//    font-family: $header-font-family !important;
+//  }
  h1.headline {}
  h2.copy{text-transform: none;}
  h3.copy {margin:1em 0;}
@@ -221,11 +225,14 @@ img.feature-img {
 section.gradient {
 	// background-image: linear-gradient(70deg, #365cc8, #001d6f);
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#365cc8+10,001d6f+100 */
-  background: #365cc8; /* Old browsers */
-  background: -moz-linear-gradient(45deg, #365cc8 10%, #001d6f 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(45deg, #365cc8 10%,#001d6f 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(45deg, #365cc8 10%,#001d6f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#365cc8', endColorstr='#001d6f',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  background: rgba(81,214,201,1);
+background: -moz-linear-gradient(left, rgba(81,214,201,1) 0%, rgba(50,88,127,1) 93%, rgba(48,79,121,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(81,214,201,1)), color-stop(93%, rgba(50,88,127,1)), color-stop(100%, rgba(48,79,121,1)));
+background: -webkit-linear-gradient(left, rgba(81,214,201,1) 0%, rgba(50,88,127,1) 93%, rgba(48,79,121,1) 100%);
+background: -o-linear-gradient(left, rgba(81,214,201,1) 0%, rgba(50,88,127,1) 93%, rgba(48,79,121,1) 100%);
+background: -ms-linear-gradient(left, rgba(81,214,201,1) 0%, rgba(50,88,127,1) 93%, rgba(48,79,121,1) 100%);
+background: linear-gradient(to right, rgba(81,214,201,1) 0%, rgba(50,88,127,1) 93%, rgba(48,79,121,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#51d6c9', endColorstr='#304f79', GradientType=1 );
   h1 {
     font-size: 4em;
     font-weight: bold;
@@ -559,17 +566,17 @@ $green:#2ecc71;
 
 /***** fonts (use @import... to add custom webfonts) ****/
 
-@import url(https://fonts.googleapis.com/css?family=Oswald:400,200,700|Lato:400,100,300,300italic,700,400italic);
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans+TC|Playfair+Display&display=swap);
 
-$primary-font: Lato; /** body, p **/
+$primary-font: Noto Sans TC; /** body, p **/
 $primary-font-weight: 300;
 $primary-font-color: null;
 
-$heading-font: Oswald; /** h1, h2, h3, h4, h5 **/
+$heading-font:Playfair Display; /** h1, h2, h3, h4, h5 **/
 $heading-font-weight: 600;
 $heading-font-color: null;
 
-$subheading-font: Oswald; /** h3, h4, h5 **/
+$subheading-font: Noto Sans TC; /** h3, h4, h5 **/
 $subheading-font-weight: 400;
 $subheading-font-color: null;
 
@@ -854,7 +861,7 @@ section.bgclear {
 }
 
 .nav > li > a, .nav > li, .navbar-toggle.btn-transparent {
-color:$nav-font-color !important;
+// color:$nav-font-color !important;
 }
 
 .nav > li > a:hover, .nav > li > a:focus, .navbar-toggle.btn-transparent:hover, .navbar-toggle.btn-transparent:focus {
@@ -870,6 +877,12 @@ color:$nav-hover-font-color !important;
 }
 .navbar-collapse{
   padding-right: 35px;
+}
+.navbar-brand{
+  h2{
+    font-size: 1.7em;
+    padding: 0px;
+  }
 }
 .btn, .btn-sm, .btn-lg, .btn-xs {
   border-radius:$radius !important;
@@ -1310,3 +1323,7 @@ color:$nav-hover-font-color !important;
 #top-link-block i{color:#ccc;}
 #top-link-block a:hover i {color:#000 !important;}
 #top-link-block a:hover {background-color: #FFF !important;}
+
+.text-white{
+  color: #fff !important;
+}
