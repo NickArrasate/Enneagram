@@ -226,13 +226,13 @@ section.gradient {
 	// background-image: linear-gradient(70deg, #365cc8, #001d6f);
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#365cc8+10,001d6f+100 */
   background: rgba(81,214,201,1);
-background: -moz-linear-gradient(left, rgba(81,214,201,1) 0%, rgba(50,88,127,1) 93%, rgba(48,79,121,1) 100%);
-background: -webkit-gradient(left top, right top, color-stop(0%, rgba(81,214,201,1)), color-stop(93%, rgba(50,88,127,1)), color-stop(100%, rgba(48,79,121,1)));
-background: -webkit-linear-gradient(left, rgba(81,214,201,1) 0%, rgba(50,88,127,1) 93%, rgba(48,79,121,1) 100%);
-background: -o-linear-gradient(left, rgba(81,214,201,1) 0%, rgba(50,88,127,1) 93%, rgba(48,79,121,1) 100%);
-background: -ms-linear-gradient(left, rgba(81,214,201,1) 0%, rgba(50,88,127,1) 93%, rgba(48,79,121,1) 100%);
-background: linear-gradient(to right, rgba(81,214,201,1) 0%, rgba(50,88,127,1) 93%, rgba(48,79,121,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#51d6c9', endColorstr='#304f79', GradientType=1 );
+  background: -moz-linear-gradient(top, rgba(81,214,201,1) 0%, rgba(35,73,109,1) 93%, rgba(32,62,102,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(81,214,201,1)), color-stop(93%, rgba(35,73,109,1)), color-stop(100%, rgba(32,62,102,1)));
+  background: -webkit-linear-gradient(top, rgba(81,214,201,1) 0%, rgba(35,73,109,1) 93%, rgba(32,62,102,1) 100%);
+  background: -o-linear-gradient(top, rgba(81,214,201,1) 0%, rgba(35,73,109,1) 93%, rgba(32,62,102,1) 100%);
+  background: -ms-linear-gradient(top, rgba(81,214,201,1) 0%, rgba(35,73,109,1) 93%, rgba(32,62,102,1) 100%);
+  background: linear-gradient(to bottom, rgba(81,214,201,1) 0%, rgba(35,73,109,1) 93%, rgba(32,62,102,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#51d6c9', endColorstr='#203e66', GradientType=0 );
   h1 {
     font-size: 4em;
     font-weight: bold;
