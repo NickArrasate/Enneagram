@@ -6,7 +6,7 @@
   {% include seo.html %}
   <!-- end SEO plugin -->
   {% if page.noindex %}<meta name="robots" content="noindex">{% endif %}
-
+  {% include favicon-helper.html %}
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
