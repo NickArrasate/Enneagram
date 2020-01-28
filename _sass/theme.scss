@@ -588,7 +588,7 @@ $link-hover-weight: null;
 $nav: rgba(256,256,256,.9);
 $nav-hover: rgba(256,256,256,.5);
 $nav-font-color: #333;
-$nav-hover-font-color: #000;
+$nav-hover-font-color: #333;
 
 $footer: null;
 $footer-font-color: null;
@@ -832,12 +832,12 @@ section.bgclear {
 
 
 #footer {
-  background-color:$footer;
-  color:$footer-font-color;
+  background-color: #333;
+  color: #fff;
   border-top: $footer-border !important;
   margin-top:-1px;
   a, a:visited, a:hover, a:active {
-    color:$footer-link-color !important;
+    color: #fff;
     }
   a:hover, a:active {
     color:$footer-link-hover-color !important;
@@ -850,9 +850,9 @@ section.bgclear {
 }
 
 .subfooter {
-  color:$subfooter-font-color !important;
+  color: #fff;
   a, a:visited, a:hover, a:active {
-    color:$subfooter-link-color !important;
+    color: #fff;
     }
   }
 
